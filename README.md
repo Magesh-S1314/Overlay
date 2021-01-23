@@ -4,16 +4,19 @@
  # How to use
  ViewController.swift
  
+   
+    class ViewController: UIViewController {
     
-    @IBOutlet weak var btnEdit: UIButton!
-    @IBOutlet weak var propertiesStackView: UIStackView!
-    
-    var overlayManager: NTOverlayManager!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        overlayManager = NTOverlayManager(context: self)
-        overlayManager.delegate = self
+        @IBOutlet weak var btnEdit: UIButton!
+        @IBOutlet weak var propertiesStackView: UIStackView!
+
+        var overlayManager: NTOverlayManager!
+
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            overlayManager = NTOverlayManager(context: self)
+            overlayManager.delegate = self
+        }
     }
     
     extension ViewController: NTOverlayManagerDelegate {
@@ -43,6 +46,7 @@
         }
     
     }
+    
  EditBtnOverlay.swift
      
      final class EditBtnOverlay: NTOverlayViewController {
@@ -68,5 +72,6 @@
             return CGRect(x: maskingRect.minX, y: maskingRect.minY - height, width: maskingRect.width, height: height)
         }
     }
+    
  <img src="https://github.com/Magesh-S1314/Overlay/blob/master/Example/Simulator%20Screen%20Shot%20-%20iPhone%20SE%20(2nd%20generation)%20-%202021-01-23%20at%2014.49.37.png" width="350"> <img src="https://github.com/Magesh-S1314/Overlay/blob/master/Example/Simulator%20Screen%20Shot%20-%20iPhone%20SE%20(2nd%20generation)%20-%202021-01-23%20at%2014.50.03.png" width="350">
 
